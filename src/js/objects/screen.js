@@ -2,9 +2,9 @@ const screen = {
   userProfile: document.querySelector('.profile-data'),
   renderUser(user) {
     this.userProfile.innerHTML = `<div class='info'>
-                                    <img src="${
-                                      user.avatarUrl
-                                    }" alt='Foto do perfil do usuario'>
+                                      <img src="${
+                                        user.avatarUrl
+                                      }" alt='Foto do perfil do usuario'>
                                     <div class='data'>
                                       <h1>${
                                         user.name ??
@@ -14,6 +14,16 @@ const screen = {
                                         user.bio ??
                                         'Não possui bio cadastrada 😢'
                                       }</p>
+                                      <div class='social'>
+                                        <p>👤 ${
+                                          user.seguidores ??
+                                          'Não possui seguidores 😢'
+                                        } followers</p>
+                                        <p>👥 ${
+                                          user.seguindo ??
+                                          'Você não segue ninguém 😢'
+                                        }   following</p>
+                                    </div>
                                     </div>
                                   </div>`;
     let repositoriesItens = '';
