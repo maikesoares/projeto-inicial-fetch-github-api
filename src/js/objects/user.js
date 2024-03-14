@@ -4,6 +4,9 @@ const user = {
   bio: '',
   userName: '',
   repositories: [],
+  seguidores: '',
+  seguindo: '',
+  events: [],
   setInfo(gitHubUser) {
     this.avatarUrl = gitHubUser.avatar_url;
     this.name = gitHubUser.name;
@@ -22,6 +25,10 @@ const user = {
   },
   setSeguindo(seguindo) {
     this.seguindo = seguindo.length;
+  },
+
+  setEvents(events) {
+    this.events = events;
   },
 };
 

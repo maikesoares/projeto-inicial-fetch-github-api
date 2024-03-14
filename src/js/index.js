@@ -1,6 +1,7 @@
 import { getUser } from '../js/services/user.js';
 import { getRepositories } from '../js/services/repositories.js';
 import { getSeguidores, getSeguindo } from '../js/services/social.js';
+import { getEvents } from '../js/services/eventos.js';
 
 import { user } from './objects/user.js';
 import { screen } from './objects/screen.js';
@@ -40,10 +41,13 @@ async function getUserData(userName) {
   const repositoriesResponse = await getRepositories(userName);
   const seguidoresResponse = await getSeguidores(userName);
   const seguindoResponse = await getSeguindo(userName);
+  const eventosResponse = await getEvents(userName);
+
   user.setInfo(userResponse);
   user.setRepositories(repositoriesResponse);
   user.setSeguidores(seguidoresResponse);
   user.setSeguindo(seguindoResponse);
+  user.setEvents(eventosResponse);
 
   screen.renderUser(user);
 }

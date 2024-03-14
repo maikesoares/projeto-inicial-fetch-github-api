@@ -1,14 +1,12 @@
+import { baseUrl } from '../variables.js';
+
 async function getSeguidores(userName) {
-  const response = await fetch(
-    `https://api.github.com/users/${userName}/followers`,
-  );
+  const response = await fetch(`${baseUrl}/${userName}/followers`);
   return await response.json();
 }
 
 async function getSeguindo(userName) {
-  const response = await fetch(
-    `https://api.github.com/users/${userName}/following`,
-  );
+  const response = await fetch(`${baseUrl}/${userName}/following`);
   return await response.json();
 }
 
